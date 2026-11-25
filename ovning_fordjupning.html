@@ -15,7 +15,8 @@
     <h2 id="huvudrubrik">Välkommen till min sida</h2>
     <p id="brodtext">Detta är ett stycke text.</p>
 
-    <button onclick="document.getElementById('huvudrubrik').textContent='Rubriken är ändrad!'; document.getElementById('brodtext').textContent='Brödtexten har uppdaterats!';">Ändra innehåll</button>
+    <button onclick="document.getElementById('huvudrubrik').textContent='Mees van den Bos'; document.getElementById('brodtext').textContent='brödtext låter gott';">Ändra innehåll</button>
+    <button onclick="document.getElementById('huvudrubrik').textContent='Välkommen till min sida'; document.getElementById('brodtext').textContent='Detta är ett stycke text.';">Återställ</button>
 
     <!-- 
     **************************************************************************
@@ -28,9 +29,11 @@
     <hr>
 
     <h3>Del 2: Använda innerHTML och HTML-taggar</h3>
-    <p>Här ska innehållet förändras med HTML-taggar.</p>
+    <p id="styling">Här ska innehållet förändras med HTML-taggar.</p>
 
-    <button onclick="document.getElementById('styling').textContent='<b>Detta är fetstilad text!</b>';">Gör fetstil</button>
+    <button onclick="document.getElementById('styling').innerHTML='<b>Detta är fetstilad text!</b>';">Gör fetstil</button>
+    <button onclick="document.getElementById('styling').innerHTML=`<a href='https://megames.se/'>Gå till min favo webbsida</a>`;">Favorit Webbsida</button>
+    <button onclick="document.getElementById('styling').innerHTML='<i>kursivt woow</i>';">Fancy text</button>
 
     <!-- 
     **************************************************************************
@@ -44,12 +47,14 @@
 
     <hr>
 
-    <h3>Del 3: Styr flera element och egenskaper</h3>
+    <h3 id="del3text">Del 3: Styr flera element och egenskaper</h3>
     <div id="box" style="border: 1px solid black; padding: 10px; margin-bottom: 10px;">
         <p id="boxText">Detta är en informationsruta.</p>
     </div>
-
-    <!-- 
+    <button onclick="document.getElementById('boxText').textContent='Systemet är igång'; document.getElementById('box').style.backgroundColor='lightblue';">Starta</button>
+    <button onclick="document.getElementById('boxText').textContent='Detta är en informationsruta.'; document.getElementById('box').style.backgroundColor='transparent';">Stäng av</button>
+    <button onclick="document.getElementById('del3text').innerHTML='<i>Del 3: Styr flera element och egenskaper</i>'; document.getElementById('box').style.backgroundImage='linear-gradient(to right, blue, red)'; document.getElementById('boxText').textContent='UTMANINGS KNAPPEN HAR KLICKATS'">Utmanings knapp!!</button>
+    <!--
     **************************************************************************
     UPPGIFT 3:
     1. Skapa en knapp med texten "Starta". När man klickar på den ska texten i rutan ändras till "Systemet är igång" och bakgrundsfärgen på div-elementet med id="box" ska ändras till ljusblå (tips: document.getElementById('box').style.backgroundColor='lightblue').
